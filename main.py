@@ -22,6 +22,7 @@ def search_jobs(
     location: str = Query("United States"),
     limit: int = Query(10),
     hours: int = Query(720),
+    distance: int = Query(50),
 ):
     try:
         df = scrape_jobs(
@@ -30,6 +31,7 @@ def search_jobs(
             location=location,
             results_wanted=limit,
             hours_old=hours,
+            distance=distance,
         )
         jobs = []
         for _, row in df.iterrows():
