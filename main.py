@@ -25,7 +25,7 @@ def search_jobs(
 ):
     try:
         df = scrape_jobs(
-            site_name=["linkedin", "indeed"],
+            site_name=["linkedin"],
             search_term=query,
             location=location,
             results_wanted=limit,
